@@ -46,23 +46,5 @@ function start(file) {
 	forks = cp.fork(file)
 }
 
-async function useServer() {
-	fastify.get('/', async function (req, reply) {
-	  reply.header('Access-Control-Allow-Origin', '*')
-	  setTimeout(() => {
-	  	return {error: 'ok'}
-	  }, 5000)
 
-	  return { no: 'err' }
-	})
-
-	try {
-	  await fastify.listen({ port: 9889 })
-	} catch (err) {
-	  console.log(err)
-	  process.exit(1)
-	}
-}
-
-
-export default { hot: main, watch: moreHotReload, start, useServer }
+export default { hot: main, watch: moreHotReload, start }
