@@ -48,16 +48,16 @@ node watch
 ## Давайте начнем!
 Давайте создадим самый простой веб-сервер, где отрендерим данные с сервера в index.html
 ```javascript
-    import blade from './modules/blade.js'
-    const Blade = new blade({devMode: 1})
-    const port = 3000
+import blade from './modules/blade.js'
+const Blade = new blade({devMode: 1})
+const port = 3000
     
-    Blade.get('/', (req, res) => {
-    	return res.render('index.html', {name: 'John'})
-    })
+Blade.get('/', (req, res) => {
+	return res.render('index.html', {name: 'John'})
+})
     
-    Blade.run(port)
+Blade.run(port)
     
-    console.log(`Blade Started!`)
+console.log(`Blade Started!`)
 ```
 Круто, не так ли?
