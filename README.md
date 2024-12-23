@@ -15,6 +15,7 @@ Blade это библиотека для создания быстрых веб-
  - [x] .render() метод для SSR (шаблонитизатор)
  - [x] .cors() метод для REST API
  - [x] devMode для авто-обновления страницы при внесении изменений
+ - [x] .static() метод для создания файлового сервера
  - [ ] Cloudflare Tunnel для быстрого тестирования
  - [ ] Server Sent Events с одной строчки кода
 
@@ -49,14 +50,16 @@ node watch
 Давайте создадим самый простой веб-сервер, где отрендерим данные с сервера в index.html
 ```javascript
 import blade from './modules/blade.js'
-const Blade = new blade({devMode: 1})
+const Blade = new blade({devMode: 1}) //devMode включает в себя Hot Reload для html/css/js
 const port = 3000
     
 Blade.get('/', (req, res) => {
 	return res.render('index.html', {name: 'John'})
 })
+
+Blade.static('static') //Регистрируем папку для доступа к файлам статического контента (css, js, svg & etc)
     
-Blade.run(port)
+Blade.run(port) //Запускаем веб-сервер
     
 console.log(`Blade Started!`)
 ```
