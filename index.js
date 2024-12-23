@@ -1,11 +1,11 @@
 import blade from './modules/blade.js'
-const Blade = new blade()
+const Blade = new blade({devMode: 1})
 const port = 3000
 
 Blade.get('/', (req, res) => {
-	return res.render('index.html', {name: 'John'})
+	return res.render('index.html')
 })
 
-Blade.run(port)
 
-console.log(`Blade Started!`)
+Blade.static('static')
+Blade.run(port)
