@@ -33,13 +33,13 @@ Blade решает проблему написания чистых шаблон
 2. Выполните установку Node.js (если его нет)
 3. Откройте cmd, перейдите в директорию клонированного git и выполните команды:
 
-```
+```bash
 npm init -y
 npm i fastify
 ```
 После выполненных манипуляций введите следующую команду:
 
-```
+```bash
 node watch
 ```
 
@@ -47,7 +47,7 @@ node watch
 
 ## Давайте начнем!
 Давайте создадим самый простой веб-сервер, где отрендерим данные с сервера в index.html
-
+```javascript
     import blade from './modules/blade.js'
     const Blade = new blade({devMode: 1})
     const port = 3000
@@ -59,5 +59,5 @@ node watch
     Blade.run(port)
     
     console.log(`Blade Started!`)
-
+```
 Круто, не так ли?
