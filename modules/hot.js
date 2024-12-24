@@ -2,10 +2,6 @@ import fs from 'fs'
 import path from 'path'
 import cp from 'child_process'
 import { color } from './cmd.js'
-import Fastify from 'fastify'
-const fastify = Fastify({
-  logger: false
-})
 
 let lastFiles = new Set();
 let forks = null
@@ -16,15 +12,26 @@ function main(name) {
 	HotReload('./' + name)
 }
 
-function moreHotReload(arr, scopes = 0) {
-	for(let obj of arr) {
-		HotReload(obj)
+function moreHotReload(arr, exclude = 0) {
+	if(exclude || exclude.length > 0) {
+		for(let obj of arr) {
+			for(let exc of exclude) {
+				HotReload(obj, exc)
+			}
+		}
+	}
+	else
+	{
+		for(let obj of arr) {
+			HotReload(obj)
+		}	
 	}
 }
 
-function HotReload(dir) {
+function HotReload(dir, ext = 0) {
 	fs.watch(dir, (event, fileName) => {
 		if(event === 'change' && fileName) {
+			if(fileName == ext) return 0;
 			if (!lastFiles.has(fileName)) {
                 lastFiles.add(fileName);
                 setTimeout(() => lastFiles.delete(fileName), 100);
