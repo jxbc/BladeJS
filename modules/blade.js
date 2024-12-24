@@ -1,4 +1,4 @@
-import Fastify from 'fastify'
+import Fastify from './server/fastify.js'
 import fastifyStatic from './static/index.js'
 import Database from './db/index.js'
 import path from 'node:path'
