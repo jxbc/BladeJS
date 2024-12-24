@@ -1,5 +1,6 @@
 import Fastify from 'fastify'
 import fastifyStatic from './static/index.js'
+import Database from './db/index.js'
 import path from 'node:path'
 import v8 from './engine.js'
 import Robot from './hot.js'
@@ -21,6 +22,10 @@ export default class Blade {
     {
       devMode = object.devMode
     }
+  }
+
+  db(name) {
+    return Database.select(name)
   }
 
   get(path, handler) {
