@@ -16,7 +16,7 @@ Blade это библиотека для создания быстрых веб-
  - [x] CORS метод для REST API
  - [x] devMode для авто-обновления страницы при внесении изменений
  - [x] Создание файлового сервера
- - [x] База данных - SimpleDB
+ - [x] База данных - SimpleDB ([изучить](https://github.com/jxbc/BladeJS/wiki/SimpleDB-by-Blade))
  - [ ] Cloudflare Tunnel для быстрого тестирования
  - [ ] Server Sent Events с одной строчки кода
 
