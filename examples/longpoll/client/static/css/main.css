@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap');
+
+html, body {
+	margin: 20px;
+	background: #000;
+	font-family: 'Rubik';
+	color: #fff;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.container {
+	width: 680px;
+	border-radius: 16px;
+	background: #181818;
+	padding: 15px 20px;
+}
+
+.test {
+	color: #fff;
+}
+
+#count {
+	color: #777;
+	margin-left: 7px;
+}
+.flex {
+	display: flex;
+}
+.header {
+	justify-content: space-between;
+	align-items: center;
+}
+.addTask {
+	padding: 7px 14px;
+	background: #27579f;
+	border-radius: 7px;
+	cursor: pointer;
+	font-size: 14px;
+}
+.blocks {
+	margin: 10px 0;
+	max-height: 455px;
+    overflow: auto;
+}
+.blocks::-webkit-scrollbar {
+    display: none;
+}
+.testBlock {
+	padding: 12px 12px;
+	border-radius: 7px;
+	background: #111;
+	color: #cbcbcb;
+	margin: 7px 0;
+}
+input {
+	outline: none;
+    border: none;
+    background: #282828;
+    padding: 7px 8px;
+    font-size: 16px;
+    color: #fff;
+    font-family: 'Rubik';
+    border-radius: 5px;
+    width: 100%;
+}
+select {
+	background: #3f3f3f;
+    padding: 4px 6px;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+}
+.ml {
+	margin-right: 7px;
+}
+
+@media (max-width: 640px) {
+	.container {
+		width: 100%;
+	}
+	html, body {
+		margin: 13px;
+	}
+	.blocks {
+		max-height: 75vh;
+	}
+}
+
+.color\:orange {color:#ffae00; background: -webkit-linear-gradient(#ffae00, #ffae64); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.color\:green_slw {color:#ffae00; background: -webkit-linear-gradient(#00ff1c, #0bfdd2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; text-shadow: 0 0 6px #0cb434;}
+.color\:legend {color:#00a1ff; font-weight: 500; background: linear-gradient(to right, #0081ff 0%, #ff0501 40%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0px 5px 5px #ff00004f);}
+.color\:cryptoman {color:#ffae00; background: linear-gradient(to right, #00e1ff 0%, #25ffb4 40%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.color\:million {color:#adadad; background: linear-gradient(to right, #ff891f 0%, #fbff3d 40%); text-shadow: 0 0 6px #ffc70dd4;  -webkit-background-clip: text; -webkit-text-fill-color: transparent;}
+.color\:anonimus {color:#fff; text-shadow: 0px -1px 0px #ffffff, 0px 0 8px #0d5fff, -2px -2px 1px #0056ff, 1px 1px 0px #0df0e5;}

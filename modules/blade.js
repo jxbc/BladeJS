@@ -58,6 +58,14 @@ export default class Blade {
       process.exit(1)
     }
   }
+
+  async longpoll(mw, time) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(mw())
+      }, time)
+    });
+  }
 }
 
 fastify.decorateReply('render', async function (template, args) {
