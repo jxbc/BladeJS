@@ -1,7 +1,7 @@
 import { exec } from 'child_process'
 import { color } from './modules/cmd.js'
 
-const module_count = 6
+const module_count = 7
 
 console.log(color.tMagenta,`$$$$$$$\  $$\                 $$\                             
 $$  __$$\ $$ |                $$ |                            
@@ -37,8 +37,12 @@ exec('npm install proxy-addr', (err, out, dec) => {
 
 					exec('npm install content-disposition', (err, out, dec) => {
 						console.log(color.tBlue + `[ 6 / ${module_count} ]`, color.Reset, 'Explorer Replicator', color.tGreen + 'Installed', color.Reset, '\n')
+						console.log(color.tBlue + `[ 7 / ${module_count} ]`, color.Reset, 'All Requirements', color.tYellow + 'Install...', color.Reset)
+						exec('npm install', (err, out, dec) => {
+							console.log(color.tBlue + `[ 7 / ${module_count} ]`, color.Reset, 'Based Node Modules', color.tGreen + 'Installed', color.Reset, '\n')
 						
-						console.log(color.tGreen + `>_$`, color.Reset, 'Blade.js Requirements Installed')
+							console.log(color.tGreen + `>_$`, color.Reset, 'Blade.js Requirements Installed')
+						})
 					})
 				})
 			})
